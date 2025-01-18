@@ -39,9 +39,8 @@ function App() {
       <OurValues />
       <WhyChooseUs ref={whyChooseUsRef} />
       <DentalServicesSection/>
+      <Location ref={locationRef}/>
       <RatedSection/>
-      <Location ref={locationRef}/>
-      <Location ref={locationRef}/>
       <Footer/>
     </div>
   );

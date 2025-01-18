@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import InfoSection from "./InfoSection";
 
-const Hero = ({ onGetStartedClick,onScrollToLocation }) => {
+const Hero = ({ onGetStartedClick, onScrollToLocation }) => {
   const [currentWord, setCurrentWord] = useState("");
   const typewriterWords = ["Smile.", "Confidence.", "Brightness."];
   const typingSpeed = 100; // Speed of typing each character
@@ -16,7 +16,6 @@ const Hero = ({ onGetStartedClick,onScrollToLocation }) => {
     const typeEffect = () => {
       const currentText = typewriterWords[wordIndex];
       if (!isDeleting) {
-        // Typing effect
         setCurrentWord(currentText.slice(0, charIndex + 1));
         charIndex++;
         if (charIndex === currentText.length) {
@@ -25,7 +24,6 @@ const Hero = ({ onGetStartedClick,onScrollToLocation }) => {
           return;
         }
       } else {
-        // Deleting effect
         setCurrentWord(currentText.slice(0, charIndex - 1));
         charIndex--;
         if (charIndex === 0) {
@@ -52,7 +50,7 @@ const Hero = ({ onGetStartedClick,onScrollToLocation }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black-opacity-20 to-transparent"></div>
 
         {/* Header */}
-        <div className="w-full flex pt-3 justify-between items-center md:px-8 px-4  bg-gradient-to from-black via-transparent to-transparent">
+        <div className="w-full flex pt-3 justify-between items-center md:px-8 px-4 bg-gradient-to from-black via-transparent to-transparent">
           {/* Logo */}
           <img
             src="/logo.png"
@@ -62,7 +60,7 @@ const Hero = ({ onGetStartedClick,onScrollToLocation }) => {
 
           {/* Contact Us Button */}
           <a
-            href="tel:123456789"
+            href="tel:919-453-0777"
             className="md:px-6 hover:cursor-pointer md:py-2 px-4 py-2 md:text-lg text-base bg-teal-600 text-white rounded-full font-semibold hover:bg-teal-700 shadow-lg transform hover:scale-105 transition duration-300"
           >
             Contact Us
@@ -70,28 +68,26 @@ const Hero = ({ onGetStartedClick,onScrollToLocation }) => {
         </div>
 
         {/* Hero Content */}
-        <section className="relative grid grid-cols-1 pb-20 md:grid-cols-2 items-center h-full px-6 md:px-12">
+        <div className="relative flex items-center h-full pb-24 px-6 md:px-12">
           {/* Left Content */}
-          <div className="space-y-6 md:space-y-8   text-white">
+          <div className="max-w-5xl space-y-6 md:space-y-8 text-white">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-600 uppercase">
               Let us Brighten <br />
               your <span className="typewriter">{currentWord}</span>
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-neutral-300 leading-relaxed max-w-lg">
+            <p className="text-base max-w-lg md:text-lg lg:text-xl text-neutral-300 leading-relaxed">
               Discover the art of confident smiles with our innovative dental
               care. We are committed to creating personalized experiences that
               brighten your day.
             </p>
-            <button 
-            onClick={onGetStartedClick}
-            className="px-8 py-4 bg-teal-600 text-white rounded-lg text-lg font-semibold hover:bg-teal-700 shadow-lg transform hover:scale-105 transition duration-300">
+            <button
+              onClick={onGetStartedClick}
+              className="px-8 py-4 bg-teal-600 text-white rounded-lg text-lg font-semibold hover:bg-teal-700 shadow-lg transform hover:scale-105 transition duration-300"
+            >
               Get Started
             </button>
           </div>
-
-          {/* Right Empty Space */}
-          <div className="hidden md:block"></div>
-        </section>
+        </div>
       </div>
 
       {/* InfoSection */}

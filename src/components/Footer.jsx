@@ -3,7 +3,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative rounded-t-3xl bg-gradient-to-r from-teal-700 via-teal-600 to-teal-500 text-white py-10">
+    <footer className="relative rounded-t-3xl mt-20 bg-gradient-to-r from-teal-700 via-teal-600 to-teal-500 text-white py-10">
       {/* Background SVG */}
       <div className="absolute inset-0 opacity-20">
         <svg
@@ -26,7 +26,9 @@ const Footer = () => {
         <div className="flex flex-col items-start space-y-4">
           <FaPhone className="text-3xl" />
           <h3 className="text-xl font-semibold">Call Us</h3>
-          <p className="text-base">(919)-453-0777</p>
+          <a href="tel:919-453-0777" className="text-base">
+            (919)-453-0777
+          </a>
         </div>
 
         {/* Address Section */}
